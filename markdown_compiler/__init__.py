@@ -71,7 +71,7 @@ def compile_lines(text):
     return '\n'.join(new_lines)
 
 
-def markdown_to_html(markdown, add_css):
+def markdown_to_html(markdown, add_css=False):
     '''
     Convert the input markdown into valid HTML,
     optionally adding CSS formatting.
@@ -142,7 +142,7 @@ def minify(html):
     return re.sub(r'\s+', ' ', html).strip()
 
 
-def convert_file(input_file, add_css):
+def convert_file(input_file, add_css=False):
     '''
     Convert the input markdown file into an HTML file.
     If the input filename is `README.md`,
