@@ -3,6 +3,8 @@ This file contains functions that work on entire documents at a time
 (and not line-by-line).
 '''
 
+import re
+
 from markdown_compiler.util.line_functions import *
 
 
@@ -102,7 +104,7 @@ def markdown_to_html(markdown, add_css=False):
 <link rel="stylesheet" href="https://izbicki.me/css/code.css" />
 <link rel="stylesheet" href="https://izbicki.me/css/default.css" />
         '''
-    html+='''
+    html += '''
 </head>
 <body>
     '''+compile_lines(markdown)+'''
@@ -111,7 +113,7 @@ def markdown_to_html(markdown, add_css=False):
     '''
     return html
 
-import re
+
 def minify(html):
     r'''
     Remove redundant whitespace (spaces and newlines) from the input HTML,
