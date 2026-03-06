@@ -254,13 +254,7 @@ def compile_links(line):
     text = line[left_bracket + 1:right_bracket]
     url = line[left_paren + 1:right_paren]
     return (
-        line[:left_bracket]
-        + '<a href="'
-        + url
-        + '">'
-        + text
-        + '</a>'
-        + line[right_paren + 1:]
+        line[:left_bracket] + '<a href="' + url + '">' + text + '</a>' + line[right_paren + 1:]
     )
 
 
@@ -296,11 +290,5 @@ def compile_images(line):
     alt = line[left_bracket + 1:right_bracket]
     url = line[left_paren + 1:right_paren]
     return (
-        line[:bang]
-        + '<img src="'
-        + url
-        + '" alt="'
-        + alt
-        + '" />'
-        + line[right_paren + 1:]
+        line[:bang] + '<img src="' + url + '" alt="' + alt + '" />' + line[right_paren + 1:]
     )
